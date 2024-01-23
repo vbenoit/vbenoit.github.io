@@ -11,17 +11,17 @@ function init( ) {
 
 	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
 	//camera.position.set( 0, - 400, 600 );
-	camera.position.set( 0, - 400, 1200 );
+	camera.position.set( 0, - 400, 600 );
 
 	scene = new THREE.Scene();
 	//scene.background = new THREE.Color( 0xf0f0f0 );
-	scene.background = new THREE.Color( 0x000000 );
+	scene.background = new THREE.Color( 0xffffff );
 
 	const loader = new FontLoader();
 	loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
 
-		//const color = 0x006699;
-		const color = 0x009933;
+		const color = 0x006699;
+		//const color = 0x009933;
 
 		const matDark = new THREE.LineBasicMaterial( {
 			color: color,
@@ -35,7 +35,7 @@ function init( ) {
 			//side: THREE.DoubleSide
 		} );
 
-		const message = '   Vincent BENOIT\npersonal website \n click & test';
+		const message = '   Vincent BENOIT\nPersonal website';
 
 		const shapes = font.generateShapes( message, 100 );
 

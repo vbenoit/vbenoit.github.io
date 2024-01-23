@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-color: white;
 	color: #009933;
 }
 
@@ -8,8 +8,10 @@ body {
 }
 
 #title, #title canvas {
-  width: 450px;
-  height: 160px;
+  --width: 450px;
+  --height: 160px;
+  width: 50%;
+  height: auto;
   margin: auto;
 }
 
@@ -20,5 +22,7 @@ body {
 
 #content {
 	color: #d30c7b;
-	margin-top: 50px;
+	--font: message-box;
+	font-family: Calibri;
+	margin: 50px;
 }
