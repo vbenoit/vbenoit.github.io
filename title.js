@@ -32,7 +32,7 @@ function init( ) {
 			color: color,
 			transparent: true,
 			opacity: 0.8,
-			side: THREE.DoubleSide
+			//side: THREE.DoubleSide
 		} );
 
 		const message = '   Vincent BENOIT\npersonal website \n click & test';
@@ -100,7 +100,7 @@ function init( ) {
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth / 2, 250 );
+	//renderer.setSize( window.innerWidth / 2, 250 );
 	//renderer.setSize( window.innerWidth, window.innerHeight );
 	document.getElementById('title').appendChild( renderer.domElement );
 	//document.body.appendChild( renderer.domElement );
@@ -115,7 +115,7 @@ function init( ) {
 
 } // end init
 
-function onWindowResize() {
+/*function onWindowResize() {
 
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
@@ -124,7 +124,7 @@ function onWindowResize() {
 
 	render();
 
-}
+}*/
 
 function render() {
 

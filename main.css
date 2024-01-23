@@ -6,3 +6,19 @@ body {
 #info {
 	display: none;
 }
+
+#title, #title canvas {
+  width: 450px;
+  height: 160px;
+  margin: auto;
+}
+
+#title canvas {
+	left: 0px;
+	right: 0px;
+}
+
+#content {
+	color: #d30c7b;
+	margin-top: 50px;
+}
