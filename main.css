@@ -1,7 +1,7 @@
 body {
-	background-color: black;
-	color: white;
-}
+	background-color: #8ecae6;
+	color: #ffb703;
+	font-family: MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif, Calibri;
 
 #info {
 	display: none;
@@ -22,19 +22,40 @@ body {
 	--font: message-box;
 	position: absolute;
 	top: 2em;
-	color: grey;
-	font-family: Calibri;
+	color: #ffb703;
 	margin: 4em;
 }
 
 #page #title {
 	text-align: center;
 	font-size: 3em;
-	background-color: grey;
-	color: red;
+	background-color: #023047;
+	color: #fb8500;
 	opacity: 0.75;
 }
 
 #page #content {
 	padding-top: 3em;
+	display: flex;
+	--flex-direction: column;
+	flex-grow: 1;
 }
+
+#page #content .box {
+	background-color: #fb8500;
+	width: 48%;
+	margin: 1%;
+	padding: 2em;
+	opacity: 0.9;
+	border: 2px solid #023047;
+}
+
+/*
+UT orange: #fb8500
+selective yellow: #ffb703
+prussian blue: #023047
+blue green: #219ebc
+sky blue: #8ecae6
+https://coolors.co/8ecae6-219ebc-023047-ffb703-fb8500
+
+*/

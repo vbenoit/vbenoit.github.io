@@ -23,9 +23,10 @@ function init() {
 	//document.body.appendChild( container );
 
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-	camera.position.z = 1000;
+	camera.position.z = 2000;
 
 	scene = new THREE.Scene();
+	scene.background = new THREE.Color( 0x8ecae6 );
 
 	//
 
@@ -60,7 +61,7 @@ function init() {
 	const material = new THREE.ShaderMaterial( {
 
 		uniforms: {
-			color: { value: new THREE.Color( 0xffffff ) },
+			color: { value: new THREE.Color( 0xD4AF37 ) },
 		},
 		vertexShader: document.getElementById( 'vertexshader' ).textContent,
 		fragmentShader: document.getElementById( 'fragmentshader' ).textContent
