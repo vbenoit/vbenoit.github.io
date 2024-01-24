@@ -21,13 +21,44 @@
 			}
 		  }
 		</script>
+		
+		<script type="x-shader/x-vertex" id="vertexshader">
+		  attribute float scale;
 
-		<script type="module" src="./title.js"></script>
+		  void main() {
 
-		<div id="title"></div>
+			vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
 
-		<div id="content">
-			<div>			
+			gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+			gl_Position = projectionMatrix * mvPosition;
+
+		  }
+
+		</script>
+
+		<script type="x-shader/x-fragment" id="fragmentshader">
+
+		  uniform vec3 color;
+
+		  void main() {
+
+			if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+			gl_FragColor = vec4( color, 1.0 );
+
+		  }
+
+		</script>
+		<script type="module" src="./waves.js"></script>
+
+		<div id="title_bg"></div>
+
+		<div id="page">
+			<div id="title">
+				<div id="title_name">Vincent BENOIT - fullstack ingénieur et marketeur</div>
+			</div>
+			<div id="content">			
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum, lectus sodales dapibus finibus, nulla ipsum aliquet quam, nec consequat elit dolor laoreet elit. Sed at tristique tellus, nec elementum dolor. Sed non mattis ex. Mauris facilisis lacus nec mattis tempus. Sed enim risus, sodales ut dictum ac, maximus non orci. Fusce gravida luctus massa, sit amet rutrum magna tincidunt sed. Aenean maximus gravida ultrices. Duis a nisl suscipit, egestas sem non, imperdiet nibh. Aliquam non aliquam elit. Sed pellentesque libero nulla, egestas porttitor velit convallis at.
 
 Curabitur varius laoreet libero, sed mattis nibh rutrum nec. Nunc id eros sodales, molestie odio in, auctor mauris. Quisque nec arcu vehicula turpis porta facilisis vel vitae purus. Fusce vel nunc efficitur, lacinia libero in, maximus tellus. Cras euismod dui lacus, eget pretium metus convallis a. Donec pulvinar eget augue quis sodales. Proin lobortis hendrerit accumsan. Donec ultricies sapien ligula, hendrerit sodales magna dictum id. Integer id lobortis libero. Mauris consequat condimentum lacinia. Etiam gravida, augue eu ornare ultrices, felis magna egestas magna, id accumsan sapien ex non ex. Fusce malesuada quis nulla dapibus condimentum. In hac habitasse platea dictumst.

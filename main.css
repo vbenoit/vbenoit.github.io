@@ -1,28 +1,40 @@
 body {
-	background-color: white;
-	color: #009933;
+	background-color: black;
+	color: white;
 }
 
 #info {
 	display: none;
 }
 
-#title, #title canvas {
-  --width: 450px;
-  --height: 160px;
-  width: 50%;
-  height: auto;
-  margin: auto;
+#title_bg canvas {
+	position: fixed;
+    top: 0em;
+    z-index: -1;
 }
 
-#title canvas {
-	left: 0px;
-	right: 0px;
+#title_bg div {
+  display: none;
 }
 
-#content {
-	color: #d30c7b;
+#page {
+	--color: #d30c7b;
 	--font: message-box;
+	position: absolute;
+	top: 2em;
+	color: grey;
 	font-family: Calibri;
-	margin: 50px;
+	margin: 4em;
+}
+
+#page #title {
+	text-align: center;
+	font-size: 3em;
+	background-color: grey;
+	color: red;
+	opacity: 0.75;
+}
+
+#page #content {
+	padding-top: 3em;
 }
