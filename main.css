@@ -1,7 +1,9 @@
 body {
-	background-color: #8ecae6;
+	background: rgb(2,48,71);
+	background: radial-gradient(circle, rgba(2,48,71,1) 0%, rgba(2,48,71,1) 49%, rgba(142,202,230,1) 100%);
 	color: #ffb703;
-	font-family: MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif, Calibri;
+	--font-family: MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif, Calibri;
+	font-family: Sans-Serif;
 
 #info {
 	display: none;
@@ -11,6 +13,7 @@ body {
 	position: fixed;
     top: 0em;
     z-index: -1;
+	opacity: 0.6;
 }
 
 #title_bg div {
@@ -34,6 +37,11 @@ body {
 	position: relative;
 	top: 100px;
 	z-index: -1;
+}
+
+.svg_icon {
+	width: 80px;
+	vertical-align: middle;
 }
 
 #page #title #title_icon img, #page #title #title_name {
@@ -71,8 +79,9 @@ body {
 	padding-top: 0.5em;
 	opacity: 0.9;
 	border: 2px solid #023047;
-	border-radius: 10%;
+	border-radius: 30px;
 	color: #023047;
+	opacity:0.8;
 }
 
 #page #content #activities .box{
