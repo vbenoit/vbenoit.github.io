@@ -19,7 +19,6 @@ body {
 
 #page {
 	position: absolute;
-	color: #ffb703;
 	text-align: center;
 }
 
@@ -43,7 +42,7 @@ body {
 #page #title h1{
 	margin: auto;
 	text-align: center;
-	color: #fb8500;
+	color: #ffb703;
 	padding: 1em;
 }
 
@@ -52,24 +51,41 @@ body {
 	text-align: center;
 	color: #023047;
 	padding: 0.5em;
-    --border-radius: 10%;
 }
 
-#page #content {
+#page #title h2 .even{
+	color: #ffb703;
+}
+
+#page #content #activities {
 	padding-top: 3em;
 	display: flex;
 	flex-grow: 1;
-	color: #023047;
 }
 
-#page #content .box {
+.box {
 	background-color: #fb8500;
-	width: 48%;
-	margin: 1%;
+	text-align: left;
 	padding: 2em;
+	padding-top: 0.5em;
 	opacity: 0.9;
 	border: 2px solid #023047;
 	border-radius: 10%;
+	color: #023047;
+}
+
+#page #content #activities .box{
+	width: 48%;
+	margin: 1%;
+}
+
+#page #content .box h2 {
+	text-align: center;
+}
+
+#whoami {
+	width: 94%;
+    margin: auto;
 }
 
 @media only screen and (max-width : 1024px) {
