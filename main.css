@@ -1,7 +1,8 @@
 body {
-	--background: rgb(2,48,71);
-	--background: radial-gradient(circle, rgba(2,48,71,1) 0%, rgba(2,48,71,1) 49%, rgba(142,202,230,1) 100%);
+	margin: 1px;
 	background: rgb(2,48,71);
+	--background: radial-gradient(circle, rgba(2,48,71,1) 0%, rgba(2,48,71,1) 49%, rgba(142,202,230,1) 100%);
+	--background: #51859f;
 	background: radial-gradient(circle, rgba(2,48,71,1) 0%, rgba(142,202,230,1) 49%, rgba(2,48,71,1) 100%);
 	color: #ffb703;
 	--font-family: MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif, Calibri;
