@@ -18,31 +18,46 @@ body {
 }
 
 #page {
-	--color: #d30c7b;
-	--font: message-box;
 	position: absolute;
-	top: 2em;
 	color: #ffb703;
-	margin: 4em;
+	text-align: center;
 }
 
 #page #title {
-	display: block;
-	width: 75%;
+	--display: flex;
+	width: 80%;
+    margin: auto;
+}
+
+#page #title #title_icon img {
+	width: 100px;
+	position: relative;
+	top: 100px;
+	z-index: -1;
+}
+
+#page #title #title_icon img, #page #title #title_name {
+  	display: inline; 
+}
+
+#page #title h1{
 	margin: auto;
 	text-align: center;
-	font-size: 1.5em;
-	--background-color: #023047;
 	color: #fb8500;
-	opacity: 0.75;
 	padding: 1em;
+}
+
+#page #title h2{
+	margin: auto;
+	text-align: center;
+	color: #023047;
+	padding: 0.5em;
     --border-radius: 10%;
 }
 
 #page #content {
 	padding-top: 3em;
 	display: flex;
-	--flex-direction: column;
 	flex-grow: 1;
 	color: #023047;
 }
