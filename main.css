@@ -26,6 +26,7 @@ body {
 	--display: flex;
 	width: 80%;
     margin: auto;
+	margin-top: -3em;
 }
 
 #page #title #title_icon img {
@@ -83,17 +84,18 @@ body {
 	text-align: center;
 }
 
-#whoami {
+.single {
 	width: 94%;
     margin: auto;
+	margin-bottom: 1em;
 }
 
 @media only screen and (max-width : 1024px) {
-    #page #content {
+    #page #content #activities {
 		flex-direction: column;
 	}
 	
-	#page #content .box {
+	#page #content #activities .box {
 	    width: 96%;
 		margin: auto;
 		margin-top: 1em;
