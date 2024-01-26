@@ -8,11 +8,6 @@
 	</head>
 	<body>
 
-		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - procedural 3D text<br/>
-			type to enter new text, drag to spin the text
-		</div>
-
 		<script type="importmap">
 		  {
 			"imports": {
@@ -52,26 +47,49 @@
 		</script>
 		<script type="module" src="./waves.js"></script>
 
-		<!--  ajouter liens whoami en haut à gauche & prenons contact en haut à droite avec navigation smooth-->
-		<!--  ajouter formulaire contact -->
+		<!--  changer la police pour le nom-->
 		<!--  ajouter rubrique réalisations et liens, screenshots -->
 		<!--  ajouter footer avec nom & année date -->
 		<!--  icons https://www.svgrepo.com/collection/internet-duotone-line-icons/ -->
 		<!--  gradients https://cssgradient.io/ --> 
 
 		<div id="title_bg"></div>
+		
+		<script>
+const urlParams = new URLSearchParams(window.location.search);
+const defaultLanguage = 'en';
+var lang = defaultLanguage; 
+( urlParams && urlParams.get('lang') ) ? lang = urlParams.get('lang') : null;
+if (lang != 'en' && lang != 'fr') lang = defaultLanguage;
+
+pageContent = {
+  'role' : {
+    'en' : 'Software fullstack developer and webmarketing',
+	'fr' : 'Développeur logiciel fullstack et webmarketeur'
+  },
+  'catchword' : {
+    'en' : 'Versatility in expertise',
+	'fr' : 'La polyvalence dans l\'expertise'
+  }
+}
+
+function setTagContent(key) {
+	document.getElementById(key).innerHTML = pageContent[key][lang];
+};
+		</script>
 
 		<div id="page">
 			<div id="links">
 				<div><a href="#whoami">Qui suis-je?</a></div>
+				<div id="lang"><a href="?lang=en">EN</a> | <a href="?lang=fr">FR</a></div>
 				<div><a href="#contact">Contact</a></div>
 			</div>
 			<div id="title">
 			    <div id="title_icon"><img src="./assets/swiss_knife.png"></div>
 				<div id="title_name">
 				  <h1>Vincent BENOIT</h1> 
-				  <h2>Développeur logiciel fullstack et webmarketeur</h2>
-				  <h2 class="even">La polyvalence dans l'expertise</h2>
+				  <h2 id="role"><script>setTagContent('role');</script></h2>
+				  <h2 id="catchword" class="even"><script>setTagContent('catchword');</script></h2>
 				</div>
 			</div>
 			<div id="content">
@@ -79,7 +97,7 @@
 					<div id="info_tech" class="box">
 						<h2><img src="./assets/host-record-svgrepo-com.svg" class="svg_icon" alt="stack" /> Fullstack software development</h2>
 						<p>
-							Je fais l’implémentation technique de sites internet optimisés pour le SEO et responsive design(from scratch ou Wordpress)<br/> 
+							Depuis plus de 20 ans, je fais l’implémentation technique de sites internet optimisés pour le SEO et responsive design(from scratch ou Wordpress)<br/> 
 							et des applications sur mesure :
 							<ul>
 							  <li>Fullstack en JS / Java</li>
@@ -94,16 +112,16 @@
 					<div id="marketing" class="box">
 						<h2>Webmarketing <img src="./assets/page-analysis-svgrepo-com.svg" class="svg_icon" alt="visualization" /></h2>
 						<p>
-						  <p>- La stratégie de croissance sur mesure sur les réseaux sociaux (FB, LinkedIn, Instagram, Youtube) et moteurs de recherche (SEO, ads)</p>
+						  <p>- J'élabore avec vous une stratégie de croissance sur mesure sur les réseaux sociaux (FB, LinkedIn, Instagram, Youtube) et moteurs de recherche (SEO, ads)</p>
 	  
-						  <p>- La réalisation de support de communication percutants, à votre image</p>
+						  <p>- Je réalise des supports de communication digitaux percutants, à votre image</p>
 						</p>
 					</div>
 				</div>
 				<div id="whoami" class="box single">
 					<h2>Qui suis-je? <img src="./assets/position.svg" class="svg_icon" alt="who am I" /></h2>
 					<p>
-					  <p>- déjà 30 ans d’expérience dans la technique et le développement informatique</p>
+					  <p>- déjà 25 ans d’expérience dans la technique et le développement informatique</p>
 					  <p>- des diplômes en développement web et psychologie (<a href="https://www.linkedin.com/in/vincent-benoit-full-stack/">profil linkedIn</a>)</p>
 					  <p>- plus de 10 ans dans des entreprises de rayonnement mondial dont certaines parmi les plus prestigieuses en telecom, healthcare, medical</p>
 					  <p>Mes compétences</p>
@@ -121,7 +139,86 @@
 				</div>
 				<div id="contact" class="box single">
 					<h2><img src="./assets/contact.svg" class="svg_icon" alt="contact" />Formulaire de contact:</h2>
-					<p>Contactez-moi pour m'expliquer votre besoin et un devis sans frais!</p>
+					<p>Contactez-moi pour m'expliquer votre besoin et obtenir un devis sans frais!</p>
+					<form id="contact-form">
+						<div class="grid-container">
+							<div>
+								<input type="hidden" name="contact_number">
+							</div>
+							<div>
+							</div>
+							<div>
+							</div>
+							<div>
+							</div>
+							<div>
+								<label>Name / Nom</label>
+							</div>
+							<div>
+								<input type="text" name="user_name" />
+							</div>
+							<div>
+							</div>
+							<div>
+							</div>
+							<div>
+								<label>Email</label>
+							</div>
+							<div>
+								<input type="email" type="email" name="user_email" required />
+							</div>
+							<div>
+							</div>
+							<div>
+							</div>
+							<div>
+								<label>Message</label>
+							</div>
+							<div>
+								<textarea name="message" cols="30" rows="10" required></textarea>
+							</div>
+							<div>
+							</div>
+							<div>
+							</div>
+							<div id="sending_message">
+							</div>
+							<div>
+								<input id="sending_button" type="submit" value="Send / Envoyer">
+							</div>
+							<div>
+							</div>
+							<div>
+							</div>
+						</div>
+					</form>
+					<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+					<script type="text/javascript">
+						(function() {
+							// https://dashboard.emailjs.com/admin/account
+							emailjs.init('iE_qTiHgeLMw5KM5X');
+						})();
+					</script>
+					<script type="text/javascript">
+						window.onload = function() {
+							document.getElementById('contact-form').addEventListener('submit', function(event) {
+								event.preventDefault();
+								// generate a five digit number for the contact_number variable
+								this.contact_number.value = Math.random() * 100000 | 0;
+								// these IDs from the previous steps
+								emailjs.sendForm('service_9yj4enb', '_template_zxlql4a', this)
+									.then(function() {
+										console.log('SUCCESS!');
+										document.getElementById('sending_message').innerHTML = "<b style='color: green'>Sent, thank you!</b>";
+										document.getElementById('sending_button').setAttribute("disabled", "disabled");
+									}, function(error) {
+										console.log('FAILED...', error);
+										document.getElementById('sending_message').innerHTML = "<span style='color: red'>Sending error</span>";
+										document.getElementById('sending_button').setAttribute("disabled", "disabled");
+									});
+							});
+						}
+					</script>
 				</div>
 			</div>
 		</div>
