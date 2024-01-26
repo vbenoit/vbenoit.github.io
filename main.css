@@ -41,7 +41,7 @@ body {
 	opacity: 0.8;
 }
 
-#links a, #lang {
+#links a, #lang, .linked_in {
 	text-decoration: none;
 	font-weight: bold;
 	color: white;
@@ -123,6 +123,10 @@ body {
 	text-align: center;
 }
 
+#page #content .box #skills {
+	text-align: left;
+}
+
 .single {
 	width: 80%;
     margin: auto;
@@ -133,6 +137,11 @@ body {
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
+}
+
+#footer {
+	text-align: center;
+	margin-bottom: 1em;
 }
 
 @media only screen and (max-width : 1024px) {

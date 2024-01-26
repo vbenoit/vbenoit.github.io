@@ -47,9 +47,7 @@
 		</script>
 		<script type="module" src="./waves.js"></script>
 
-		<!--  changer la police pour le nom-->
 		<!--  ajouter rubrique réalisations et liens, screenshots -->
-		<!--  ajouter footer avec nom & année date -->
 		<!--  icons https://www.svgrepo.com/collection/internet-duotone-line-icons/ -->
 		<!--  gradients https://cssgradient.io/ --> 
 
@@ -63,6 +61,14 @@ var lang = defaultLanguage;
 if (lang != 'en' && lang != 'fr') lang = defaultLanguage;
 
 pageContent = {
+  'who' : {
+	'en' : '<a href="#whoami">Who I am</a>',
+	'fr' : '<a href="#whoami">Qui suis-je?</a>'
+  },
+  'who_title' : {
+	'en' : 'Who I am',
+	'fr' : 'Qui suis-je?'	
+  },
   'role' : {
     'en' : 'Software fullstack developer and webmarketing',
 	'fr' : 'Développeur logiciel fullstack et webmarketeur'
@@ -70,17 +76,98 @@ pageContent = {
   'catchword' : {
     'en' : 'Versatility in expertise',
 	'fr' : 'La polyvalence dans l\'expertise'
+  },
+  'tech_title' : {
+	'en' : 'Fullstack software development',
+	'fr' : 'Développement logiciel full-stack'
+  },
+  'tech_details' : {
+	'en' : `For more than 20 years, I have been carrying out the technical implementation of websites optimized for SEO and responsive design (from scratch or Wordpress) <br/>
+				and tailor-made applications:
+				<ul>
+				<li>Fullstack in JS & Java</li>
+				<li>React</li>
+				<li>Angular</li>
+				<li>Node.js</li>
+				<li>Mobile applications</li>
+				<li>Desktop applications</li>
+				</ul>`,
+	'fr' : `Depuis plus de 20 ans, je fais l\’implémentation technique de sites internet optimisés pour le SEO et responsive design (from scratch ou Wordpress) <br/> 
+				et des applications sur mesure :
+				<ul>
+				  <li>Fullstack en JS & Java</li>
+				  <li>React</li>
+				  <li>Angular</li>
+				  <li>Node.js</li>
+				  <li>Application mobiles</li>
+				  <li>Applications de bureau</li>
+				</ul>`
+  },
+  'marketing_details' : {
+	'en' : `<p>- I develop with you a tailor-made growth strategy on social networks (FB, LinkedIn, Instagram, Youtube) and search engines (SEO, ads)</p>
+
+			<p>- I create impactful digital communication media, in your image</p>`,
+			
+	'fr' : `<p>- J'élabore avec vous une stratégie de croissance sur mesure sur les réseaux sociaux (FB, LinkedIn, Instagram, Youtube) et moteurs de recherche (SEO, ads)</p>
+	  
+			<p>- Je réalise des supports de communication digitaux percutants, à votre image</p>`
+  },
+  'whoami_details' : {
+	'en' : `
+		  <p>- Already 25 years of experience in technology and IT development</p>
+		  <p>- Diplomas in web development and psychology (<a class="linked_in" href="https://www.linkedin.com/in/vincent-benoit-full-stack/">linkedIn profile</a>)</p>
+		  <p>- More than 10 years in companies with a global reach, including some of the most prestigious in telecoms, healthcare, medical</p>
+		  <h2 id="skills">My skills</h2>
+			<ul>
+			  <li>Technical versatility: JS, Java, PHP, Perl <img src="./assets/versatility.svg" class="svg_icon" alt="versatility" /></li>
+			  <li><img src="./assets/art.svg" class="svg_icon" alt="art" />Artistic creativity</li>
+			  <li>The methodological organization <img src="./assets/methodo.svg" class="svg_icon" alt="methodology" /></li>
+			  <li><img src="./assets/xp.svg" class="svg_icon" alt="experience" />Experienced analysis</li>
+			  <li>The spirit of synthesis and formulation <img src="./assets/synthesis.svg" class="svg_icon" alt="synthesis" /></li>
+			</ul>
+		  <p>
+			This know-how will be valuable support so that we can establish together a clear and measurable action plan for the growth of your projects and the acquisition of customers.
+		   </p>
+			`,
+	'fr' : `
+		  <p>- Déjà 25 ans d’expérience dans la technique et le développement informatique</p>
+		  <p>- Des diplômes en développement web et psychologie (<a class="linked_in" href="https://www.linkedin.com/in/vincent-benoit-full-stack/">profil linkedIn</a>)</p>
+		  <p>- Plus de 10 ans dans des entreprises de rayonnement mondial dont certaines parmi les plus prestigieuses en telecom, healthcare, medical</p>
+		  <h2 id="skills">Mes compétences</h2>
+		  <ul>
+			  <li>La polyvalence technique : JS, Java, PHP, Perl <img src="./assets/versatility.svg" class="svg_icon" alt="versatility" /></li>
+			  <li><img src="./assets/art.svg" class="svg_icon" alt="art" />La créativité artistique</li>
+			  <li>L’organisation méthodologique <img src="./assets/methodo.svg" class="svg_icon" alt="methodology" /></li>
+			  <li><img src="./assets/xp.svg" class="svg_icon" alt="experience" />L’analyse expérimentée</li>
+			  <li>L’esprit de synthèse et de formulation <img src="./assets/synthesis.svg" class="svg_icon" alt="synthesis" /></li>
+		  </ul>		  
+		  <p>
+		  Ces savoir-faire seront de précieux support pour que nous puissions établir ensemble un plan d’action clair et mesurable pour la croissance de vos projets et l’acquisition de clients.
+		  </p>
+			`
+  },
+  'contact_details' : {
+	'en' : 'Contact me to explain your needs and get a free estimate !',
+	'fr' : 'Contactez-moi pour m\'expliquer votre besoin et obtenir un devis sans frais !'
+  },
+  'form_title' : {
+	'en' : 'Contact form :',
+	'fr' : 'Formulaire de contact :'
   }
 }
 
 function setTagContent(key) {
 	document.getElementById(key).innerHTML = pageContent[key][lang];
 };
+
+function sTC(key) {
+	setTagContent(key);
+};
 		</script>
 
 		<div id="page">
 			<div id="links">
-				<div><a href="#whoami">Qui suis-je?</a></div>
+				<div id="who"><script>sTC('who')</script></div>
 				<div id="lang"><a href="?lang=en">EN</a> | <a href="?lang=fr">FR</a></div>
 				<div><a href="#contact">Contact</a></div>
 			</div>
@@ -88,58 +175,32 @@ function setTagContent(key) {
 			    <div id="title_icon"><img src="./assets/swiss_knife.png"></div>
 				<div id="title_name">
 				  <h1>Vincent BENOIT</h1> 
-				  <h2 id="role"><script>setTagContent('role');</script></h2>
-				  <h2 id="catchword" class="even"><script>setTagContent('catchword');</script></h2>
+				  <h2 id="role"><script>sTC('role');</script></h2>
+				  <h2 id="catchword" class="even"><script>sTC('catchword');</script></h2>
 				</div>
 			</div>
 			<div id="content">
 				<div id="activities">
 					<div id="info_tech" class="box">
-						<h2><img src="./assets/host-record-svgrepo-com.svg" class="svg_icon" alt="stack" /> Fullstack software development</h2>
-						<p>
-							Depuis plus de 20 ans, je fais l’implémentation technique de sites internet optimisés pour le SEO et responsive design(from scratch ou Wordpress)<br/> 
-							et des applications sur mesure :
-							<ul>
-							  <li>Fullstack en JS / Java</li>
-							  <li>React</li>
-							  <li>Angular</li>
-							  <li>Node.js</li>
-							  <li>Application mobiles</li>
-							  <li>Applications de bureau</li>
-							</ul>
-							</p>
+						<h2><img src="./assets/host-record-svgrepo-com.svg" class="svg_icon" alt="stack" /> <span id="tech_title"><script>sTC('tech_title')</script></span></h2>
+						<p id="tech_details">
+							<script>sTC('tech_details')</script>
+						</p>
 					</div>
 					<div id="marketing" class="box">
 						<h2>Webmarketing <img src="./assets/page-analysis-svgrepo-com.svg" class="svg_icon" alt="visualization" /></h2>
-						<p>
-						  <p>- J'élabore avec vous une stratégie de croissance sur mesure sur les réseaux sociaux (FB, LinkedIn, Instagram, Youtube) et moteurs de recherche (SEO, ads)</p>
-	  
-						  <p>- Je réalise des supports de communication digitaux percutants, à votre image</p>
+						<p id="marketing_details">
+						  <script>sTC('marketing_details')</script>
 						</p>
 					</div>
 				</div>
 				<div id="whoami" class="box single">
-					<h2>Qui suis-je? <img src="./assets/position.svg" class="svg_icon" alt="who am I" /></h2>
-					<p>
-					  <p>- déjà 25 ans d’expérience dans la technique et le développement informatique</p>
-					  <p>- des diplômes en développement web et psychologie (<a href="https://www.linkedin.com/in/vincent-benoit-full-stack/">profil linkedIn</a>)</p>
-					  <p>- plus de 10 ans dans des entreprises de rayonnement mondial dont certaines parmi les plus prestigieuses en telecom, healthcare, medical</p>
-					  <p>Mes compétences</p>
-					  <ul>
-						  <li>la polyvalence technique : JS, Java, PHP, Perl <img src="./assets/versatility.svg" class="svg_icon" alt="versatility" /></li>
-						  <li><img src="./assets/art.svg" class="svg_icon" alt="art" />la créativité artistique</li>
-						  <li>l’organisation méthodologique <img src="./assets/methodo.svg" class="svg_icon" alt="methodology" /></li>
-						  <li><img src="./assets/xp.svg" class="svg_icon" alt="experience" />l’analyse expérimentée</li>
-						  <li>l’esprit de synthèse et de formulation <img src="./assets/synthesis.svg" class="svg_icon" alt="synthesis" /></li>
-					  </ul>		  
-					  <p>
-					  seront de précieux support pour que nous puissions établir ensemble un plan d’action clair et mesurable pour la croissance de vos projets et l’acquisition de clients.
-					  </p>
-					</p>
+					<h2><span id="who_title"><script>sTC('who_title')</script></span> <img src="./assets/position.svg" class="svg_icon" alt="who am I" /></h2>
+					<p id="whoami_details"><script>sTC('whoami_details')</script></p>
 				</div>
 				<div id="contact" class="box single">
-					<h2><img src="./assets/contact.svg" class="svg_icon" alt="contact" />Formulaire de contact:</h2>
-					<p>Contactez-moi pour m'expliquer votre besoin et obtenir un devis sans frais!</p>
+					<h2><img src="./assets/contact.svg" class="svg_icon" alt="contact" /><span id="form_title"><script>sTC('form_title')</script></span></h2>
+					<p id="contact_details"><script>sTC('contact_details')</script></p>
 					<form id="contact-form">
 						<div class="grid-container">
 							<div>
@@ -162,7 +223,7 @@ function setTagContent(key) {
 							<div>
 							</div>
 							<div>
-								<label>Email</label>
+								<label>E-mail</label>
 							</div>
 							<div>
 								<input type="email" type="email" name="user_email" required />
@@ -206,7 +267,7 @@ function setTagContent(key) {
 								// generate a five digit number for the contact_number variable
 								this.contact_number.value = Math.random() * 100000 | 0;
 								// these IDs from the previous steps
-								emailjs.sendForm('service_9yj4enb', '_template_zxlql4a', this)
+								emailjs.sendForm('service_9yj4enb', 'template_zxlql4a', this)
 									.then(function() {
 										console.log('SUCCESS!');
 										document.getElementById('sending_message').innerHTML = "<b style='color: green'>Sent, thank you!</b>";
@@ -221,6 +282,7 @@ function setTagContent(key) {
 					</script>
 				</div>
 			</div>
+			<div id="footer">Vincent BENOIT - 2024</div>
 		</div>
 
 	</body>
